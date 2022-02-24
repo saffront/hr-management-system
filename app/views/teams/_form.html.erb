@@ -11,27 +11,29 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="field form-group mb-3">
+    <%= form.text_field :name, class:"form-control", placeholder:"Name"  %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="field form-group mb-3">
+    <%= form.text_area :description, class:"form-control", placeholder:"Description"  %>
   </div>
 
-  <div>
-    <%= form.label :team_members, style: "display: block" %>
-    <%= form.text_field :team_members %>
+  <div class="field form-group mb-3">
+    <%= form.select :team_members,Employee.all.pluck(:name),{prompt:'Members'},{class: "form-control"}%>
   </div>
 
-  <div>
-    <%= form.label :team_lead, style: "display: block" %>
-    <%= form.text_field :team_lead %>
+  <div class="field form-group mb-3">
+    <%= form.select :team_lead,Employee.all.pluck(:name),{prompt:'Leader'},{class: "form-control"}%>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="field form-group mb-3" class="form-control">
+    <%= form.select :division_id,Division.all.pluck(:name,:id),{prompt:'Division'},{class: "form-control"}%>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-secondary"%>
   </div>
 <% end %>

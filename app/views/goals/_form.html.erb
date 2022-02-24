@@ -11,37 +11,37 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="field form-group mb-3">
+    <%= form.text_field :title, class:"form-control", placeholder:"Title" %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="field form-group mb-3">
+    <%= form.text_area :description, class:"form-control", placeholder:"Description" %>
   </div>
 
-  <div>
-    <%= form.label :start_date, style: "display: block" %>
-    <%= form.datetime_field :start_date %>
+  <div class="field form-group mb-3">
+    <%= form.datetime_field :start_date, class:"form-control", placeholder:"Start Date" %>
   </div>
 
-  <div>
-    <%= form.label :finish_date, style: "display: block" %>
-    <%= form.datetime_field :finish_date %>
+  <div class="field form-group mb-3">
+    <%= form.datetime_field :finish_date, class:"form-control", placeholder:"Finish Date" %>
   </div>
 
-  <div>
-    <%= form.label :team_name, style: "display: block" %>
-    <%= form.text_field :team_name %>
+  <div class="field form-group mb-3">
+    <%= form.text_field :team_name, class:"form-control", placeholder:"Team Name" %>
   </div>
 
-  <div>
-    <%= form.label :goal_status, style: "display: block" %>
-    <%= form.text_field :goal_status %>
+  <div class="field form-group mb-3">
+    <%= form.text_field :goal_status, class:"form-control", placeholder:"Status" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="field form-group mb-3" class="form-control">
+    <%= form.select :team_id,Team.all.pluck(:name,:id),{prompt:'Team'},{class: "form-control"}%>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-secondary" %>
   </div>
 <% end %>
