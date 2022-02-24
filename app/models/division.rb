@@ -1,5 +1,5 @@
 class Division < ApplicationRecord
 
     #association
-    has_many :teams
+    has_many :teams, dependent: :nullify
 end
