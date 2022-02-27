@@ -3,8 +3,9 @@
 <%= render @employee %>
 
 <div>
-  <%= link_to "Edit this employee", edit_employee_path(@employee) %> |
-  <%= link_to "Back to employees", employees_path %>
-
-  <%= button_to "Destroy this employee", @employee, method: :delete %>
+  <%= link_to "Edit this employee", edit_employee_path(@employee), class:"btn btn-secondary"  %> 
+  <%= link_to "Back to employees", employees_path, class:"btn btn-dark"  %>
+  <br>
+  <br>
+  <%= button_to "Destroy this employee", @employee, method: :delete, class:"btn btn-secondary"  %>
 </div>

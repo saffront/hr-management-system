@@ -1,14 +1,35 @@
-<p style="color: green"><%= notice %></p>
+<h1>Divisions List</h1>
 
-<h1>Divisions</h1>
+<table class="table table-striped table-bordered table-hover">
 
-<div id="divisions">
-  <% @divisions.each do |division| %>
-    <%= render division %>
-    <p>
-      <%= link_to "Show this division", division %>
-    </p>
-  <% end %>
-</div>
+  <thead class="table-dark">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Teams</th>
+    <th>Manager</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
 
-<%= link_to "New division", new_division_path %>
+  <tbody>
+  <% @divisions.each do |division|%>
+  <tr>
+    <td><%= division.name %></td>
+    <td><%= division.description %></td>
+    <td><%= division.teams_names %></td>
+    <td><%= division.manager %></td>
+    <td><%= link_to 'Show', division %></td>
+    <td><%= link_to 'Edit', edit_division_path(division) %></td>
+    <td><%= link_to 'Destroy', division, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+  </tr>
+
+  <%end%>
+
+  </tbody>
+
+</table>
+<br>
+
+
+<%= link_to "New division", new_division_path, class:"btn btn-secondary" %>
