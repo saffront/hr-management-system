@@ -11,32 +11,31 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="field form-group mb-3">
+    <%= form.text_field :name, class:"form-control", placeholder:"Name" %>
   </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+  <div class="field form-group mb-3">
+    <%= form.text_field :email, class:"form-control", placeholder:"Email"  %>
   </div>
 
-  <div>
-    <%= form.label :job, style: "display: block" %>
-    <%= form.text_field :job %>
+  <div class="field form-group mb-3">
+    <%= form.text_field :job, class:"form-control", placeholder:"Job"  %>
   </div>
 
-  <div>
-    <%= form.label :salary, style: "display: block" %>
-    <%= form.text_field :salary %>
+  <div class="field form-group mb-3">
+    <%= form.text_field :salary, class:"form-control", placeholder:"Salary"  %>
   </div>
 
-  <div>
-    <%= form.label :employment_status, style: "display: block" %>
-    <%= form.text_field :employment_status %>
+  <div class="field form-group mb-3">
+    <%= form.text_field :employment_status, class:"form-control", placeholder:"Status"  %>
   </div>
 
-  <div>
-    <%= form.submit %>
+   <div class="field form-group mb-3" class="form-control">
+    <%= form.select :team_id,Team.all.pluck(:name,:id),{prompt:'Team'},{class: "form-control"}%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-secondary"%>
   </div>
 <% end %>
