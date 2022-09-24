@@ -6,7 +6,7 @@ class Employee < ApplicationRecord
     validates :job, presence: true, length: {maximum:30}
     validates :salary, presence: true
     validates :employment_status, presence: true, length: {maximum:20}
-    validates :team_id, presence: true
+    validates :team_id, presence: false
 
     #association
     belongs_to :team, optional: true

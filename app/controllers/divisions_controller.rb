@@ -65,6 +65,6 @@ class DivisionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def division_params
-      params.require(:division).permit(:name, :description, :teams_names, :manager)
+      params.fetch(:division).permit(:name, :description, :teams_names, :manager)
     end
 end
