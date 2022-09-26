@@ -1,5 +1,9 @@
 <div id="<%= dom_id employee %>">
   <p>
+    <strong>Employee ID:</strong>
+    <%= employee.employee_id %>
+  </p>
+  <p>
     <strong>Name:</strong>
     <%= employee.name %>
   </p>
@@ -25,8 +29,8 @@
   </p>
 
   <p>
-    <strong>Team Id:</strong>
-    <%= employee.team_id %>
+    <strong>Team Name:</strong>
+    <%= employee.team.name %>
   </p>
 
 </div>
